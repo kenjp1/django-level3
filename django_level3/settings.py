@@ -142,3 +142,14 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.app.github.dev', 
     'https://localhost:8080',
 ]
+
+# フラッシュメッセージ設定
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert alert-secondary',
+    messages.INFO: 'alert alert-info',
+    messages.SUCCESS: 'alert alert-success',
+    messages.WARNING: 'alert alert-warning',
+    messages.ERROR: 'alert alert-danger',
+}
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

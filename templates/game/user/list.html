@@ -9,7 +9,14 @@
     <div class="alert alert-danger" role="alert">
         {{message}}
     </div>
+
+    {% include 'flash.html' %}
+
+    <div class="mb-3">
+        <a href="{% url 'game:user_create' %}" class="btn btn-primary">新規作成</a>
+    </div>
     
+    {% include 'pagination.html' %} 
     <table class="table table-hover table-bordered">
         <thead class="table-dark">
             <tr>
@@ -32,5 +39,6 @@
             {% endfor %}
         </tbody>
     </table>
+    {% include 'pagination.html' %} 
 </div>
 {% endblock %}
